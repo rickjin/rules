@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 兼容模式方案：IE以最高级模式渲染文档；使用Chrome Frame渲染。 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+    <meta
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"
+      name="viewport"
+    />
+    <!-- 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (ios7.0版本以后，safari上已看不到效果) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式 (可选default、black、black-translucent) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 忽略将页面中的数字识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 作者 -->
+    <meta name="author" content="Cleam Lee" />
+    <!-- 关键词 -->
+    <meta name="keywords" content="关键词" />
+    <!-- 描述信息 -->
+    <meta name="description" content="描述信息" />
+    <title>帮助中心</title>
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt =
+            'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth,
+              MAX_WIDTH = 750;
+            if (!clientWidth) {
+              return;
+            }
+            if (clientWidth >= MAX_WIDTH) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / MAX_WIDTH) + 'px';
+            }
+          };
+        recalc();
+        if (!doc.addEventListener) {
+          return;
+        }
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .weather-luck-rule {
+        padding: 0.3rem;
+        background: rgba(244, 245, 249, 0.5);
+        min-height: 100%;
+        box-sizing: border-box;
+      }
+
+      .weather-luck-title {
+        margin-bottom: 0.2rem;
+        font-size: 0.34rem;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+      }
+
+      .weather-luck-rule-item {
+        font-size: 0.28rem;
+        font-weight: 400;
+        color: #333;
+        line-height: 0.42rem;
+        margin-bottom: 0.1rem;
+        text-indent: 1.5em;
+      }
+      .weather-luck-tip {
+        font-size: 0.2rem;
+        font-weight: 500;
+        color: #333;
+        line-height: 0.42rem;
+        margin-bottom: 0.1rem;
+        text-align: right;
+      }
+      .footer-signature {
+        font-size: 0.28rem;
+        font-weight: 400;
+        color: #333;
+        line-height: 0.42rem;
+        margin-bottom: 0.1rem;
+        text-indent: 1.5em;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="weather-luck-rule">
+      <p class="weather-luck-rule-item">
+        <strong>
+			Q：购买VIP能开票吗？
+        </strong>
+      </p>
+      <p class="weather-luck-rule-item">
+		A：您购买所支付的费用是通过App Store进行付款的，苹果公司在扣费后将电子收据发送到您注册苹果帐号的邮箱里。我们无法查询到您的苹果订单，也无法帮你开票。
+      </p>
+	  <p class="weather-luck-rule-item">
+	    <strong>
+	  		Q：怎么取消苹果的自动续费？	
+	    </strong>
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  	A：每种设备操作步骤不同，一般在iPhone设置——点击您的苹果ID——订阅中可以操作。如无法操作，请参考苹果官网的操作步骤：https：support.apple.com/zh-cn/HY202039请注意：如果您注册了免费订阅或提供折扣的试用订阅，并且不想续订，请在试用期结束前至少提前24小时取消订阅。苹果可能在免费试用期内提前扣款，具体扣款时间由苹果公司及您绑定的扣款服务商（如银行，支付宝，微信）决定，您无法自行查看或更改实际扣款时间。
+	
+	  </p>
+	  <p class="weather-luck-rule-item">
+	    <strong>
+	  			Q：换手机了，如何转移收费版到新手机？
+
+	    </strong>
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  	A：如果您是购买的“文字识别扫描”会员，需要您先登录帐号信息，登录成功自动将会员信息绑定到该帐号，在您更换手机后，使用相同的帐号登录，则会自动同步会员信息。
+	
+	  </p>
+	  <p class="weather-luck-rule-item">
+	    <strong>
+	  		Q：我申请的三天免费试用，为什么直接扣费了？
+	
+	    </strong>
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  		A：3天免费使用权限是根据Apple ID来判定，由于苹果未授权开发商查询用户的Appld ID情况，所以在app界面会看到3天免费试用，如此前此Apple ID已经享受过该特权，点击【免费试用】后苹果购买界面会直接提示需要支付进行升级，苹果将引导用户使用指纹或刷脸的方式支付。之后苹果会将扣款通知通过电子邮件账单的形式发送。
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  		如需取消，请访问网址(https://support.apple.com/zh-cn/HT202039) 按照步骤提示进行取消。
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  		注意：
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  		1.在取消成功后，苹果将在当前订阅到期后不再发起自动续订。
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  		2.由于自动订阅服务是由苹果公司提供，开发者无法查看、修改和取消用户的自动续费，所以需要您自行在自己的苹果账户设置中操作取消。
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  		关于退款：
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  		由于高级帐户属于虚拟物品，性质属于app内购，款项由美国苹果公司统一收取结算，由美国苹果公司向您提供付款凭证及扣款账单。我们没有任何权限获取到您在苹果的付款详情（包括且不限于订单号、付款项目、扣款数额、付款时间、付款方式），苹果也没有提供任何渠道允许我们直接向用户退款。所以如需退款，建议您联系您所在地的苹果客服。如果您是在中国大陆注册的苹果帐号，可以通过AppleID中的订单直接办理退款，或者拨打苹果中国大陆客服电话咨询（具体步骤可参照：https://support.apple.com/zh-cn/HT204084）。非中国大陆地区请参考：https://support.apple.com/en-us/HT204084
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	    <strong>
+	  		Q：为什么ocr识别效果不好？
+	
+	    </strong>
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  	A：以下是可能影响OCR识别结果的一些因素：	
+	  </p>
+	  <p class="weather-luck-rule-item">
+	    1. 照片清晰度：当您拍摄文档时，请尽量撑满整个相机取景器屏幕。如果文字看起来不那么清晰，请轻击屏幕使照相机对焦；
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  		2. 光线条件：在明亮的光线条件下，照片上噪点会更少，识别效果会更好；
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	    3. 对比度：为保证识别效果，请确保纸张上的文字和其背景颜色对比强烈；
+
+	  </p>
+	  <p class="weather-luck-rule-item">
+	  	另外，OCR识别效果和图片的质量息息相关，尺寸小、像素低的图片上的文字不容易被识别；对于拍摄电脑、电视屏幕获得的照片，识别率会受到照片上噪点的影响；手写体目前还不支持识别。
+	
+	  </p>
+	  <p class="weather-luck-rule-item">
+	    如果识别效果依然不尽如人意，请将未经切边增强处理的照片通过电子邮件发送给我们(wenziocr@126.com)。我们会将其提交给算法团队的科学家们进行进一步分析。请放心，所有图片上的信息都将被严格保密，仅用于内部算法数据分析。
+
+	  </p>
+    </div>
+  </body>
+</html>
