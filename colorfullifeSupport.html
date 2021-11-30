@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- 兼容模式方案：IE以最高级模式渲染文档；使用Chrome Frame渲染。 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+		<meta content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" name="viewport" />
+		<!-- 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (ios7.0版本以后，safari上已看不到效果) -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式 (可选default、black、black-translucent) -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- 忽略将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<!-- 作者 -->
+		<meta name="author" content="Cleam Lee" />
+		<!-- 关键词 -->
+		<meta name="keywords" content="关键词" />
+		<!-- 描述信息 -->
+		<meta name="description" content="描述信息" />
+		<title>Colorful life隐私政策</title>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt =
+					'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth,
+							MAX_WIDTH = 750;
+						if (!clientWidth) {
+							return;
+						}
+						if (clientWidth >= MAX_WIDTH) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / MAX_WIDTH) + 'px';
+						}
+					};
+				recalc();
+				if (!doc.addEventListener) {
+					return;
+				}
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body,
+			html {
+				height: 100%;
+				background: rgba(244, 245, 249, 0.5);
+			}
+
+			header {
+				font-size: 0.3rem;
+			}
+
+			.weather-luck-rule {
+				padding: 0.3rem;
+				background: rgba(244, 245, 249, 0.5);
+				min-height: 100%;
+				box-sizing: border-box;
+			}
+
+			.weather-luck-title {
+				margin-bottom: 0.2rem;
+				font-size: 0.34rem;
+				font-weight: bold;
+				color: #333;
+				text-align: center;
+			}
+
+			.weather-luck-rule-item {
+				font-size: 0.28rem;
+				font-weight: 500;
+				color: #333;
+				line-height: 0.42rem;
+				margin-bottom: 0.1rem;
+				text-indent: 1.5em;
+			}
+			.weather-luck-tip{
+				font-size: 0.2rem;
+				font-weight: 500;
+				color: #333;
+				line-height: 0.42rem;
+				margin-bottom: 0.1rem;
+				text-align: right;
+			}
+			.weather-luck-rule-footer-name {
+				font-size: 0.28rem;
+				font-weight: 500;
+				color: #333;
+				line-height: 0.42rem;
+				margin-bottom: 0.1rem;
+				text-align: right;
+			}
+			.weather-luck-rule-item span{
+				color: #687A9F;
+			}
+			.weather-luck-rule-item a{
+				color: #687A9F;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="weather-luck-rule">
+			<div class="weather-luck-title">colorful life technical support</div>
+			<div class="weather-luck-tip"></div>
+            
+
+            <p class="weather-luck-rule-item">Colorful life是一个观看各类小视频，图片特效和心理测试的生活综合平台。</p>
+            <p class="weather-luck-rule-item">● 视频剧场</p>
+            <p class="weather-luck-rule-item">精选视屏小短剧，古装、爱情、悬疑应有应有</p>
+            <p class="weather-luck-rule-item">● 照片效果</p>
+            <p class="weather-luck-rule-item">风景艺术滤镜，人物漫画效果，多种图片处理给你想要的艺术效果</p>
+            <p class="weather-luck-rule-item">● 心理测试</p>
+            <p class="weather-luck-rule-item">专业心理测试，让你更了解自己</p>
+			<p class="weather-luck-rule-item">● ai人像</p>
+            <p class="weather-luck-rule-item">人像ai处理，合成人像</p>
+
+			
+			<p class="weather-luck-rule-footer-name"></p>
+		</div>
+	</body>
+	<script>
+		var UA = window.navigator.userAgent.toLowerCase();
+		var isIOS = /iphone|ipad|ipod/.test(UA);
+		var isAN = UA.indexOf('android') >= 0;
+		var setBtn = document.getElementById("set-operation");
+		setBtn.onclick = function(){
+			if(isAN){
+				window.xyWeather.callApp(JSON.stringify({action:"goSetting"}))
+				return
+			}
+			if(isIOS){
+				window.webkit.messageHandlers.callApp.postMessage(JSON.stringify({action:"goSetting"}))
+			}
+			
+		}
+	</script>
+</html>
