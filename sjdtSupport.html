@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://rickjin.github.io/rules/colorfullifeSupport.html -->
+<html style="font-size: 100px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		
+		<!-- 兼容模式方案：IE以最高级模式渲染文档；使用Chrome Frame渲染。 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+		<meta content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" name="viewport">
+		<!-- 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (ios7.0版本以后，safari上已看不到效果) -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式 (可选default、black、black-translucent) -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- 忽略将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no">
+		<!-- 作者 -->
+		<meta name="author" content="Cleam Lee">
+		<!-- 关键词 -->
+		<meta name="keywords" content="关键词">
+		<!-- 描述信息 -->
+		<meta name="description" content="描述信息">
+		<title>高清街景地图</title>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt =
+					'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth,
+							MAX_WIDTH = 750;
+						if (!clientWidth) {
+							return;
+						}
+						if (clientWidth >= MAX_WIDTH) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / MAX_WIDTH) + 'px';
+						}
+					};
+				recalc();
+				if (!doc.addEventListener) {
+					return;
+				}
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body,
+			html {
+				height: 100%;
+				background: rgba(244, 245, 249, 0.5);
+			}
+
+			header {
+				font-size: 0.3rem;
+			}
+
+			.weather-luck-rule {
+				padding: 0.3rem;
+				background: rgba(244, 245, 249, 0.5);
+				min-height: 100%;
+				box-sizing: border-box;
+			}
+
+			.weather-luck-title {
+				margin-bottom: 0.2rem;
+				font-size: 0.34rem;
+				font-weight: bold;
+				color: #333;
+				text-align: center;
+			}
+
+			.weather-luck-rule-item {
+				font-size: 0.28rem;
+				font-weight: 500;
+				color: #333;
+				line-height: 0.42rem;
+				margin-bottom: 0.1rem;
+				text-indent: 1.5em;
+			}
+			.weather-luck-tip{
+				font-size: 0.2rem;
+				font-weight: 500;
+				color: #333;
+				line-height: 0.42rem;
+				margin-bottom: 0.1rem;
+				text-align: right;
+			}
+			.weather-luck-rule-footer-name {
+				font-size: 0.28rem;
+				font-weight: 500;
+				color: #333;
+				line-height: 0.42rem;
+				margin-bottom: 0.1rem;
+				text-align: right;
+			}
+			.weather-luck-rule-item span{
+				color: #687A9F;
+			}
+			.weather-luck-rule-item a{
+				color: #687A9F;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="weather-luck-rule">
+			<div class="weather-luck-title">高清街景地图</div>
+			<div class="weather-luck-tip"></div>
+            
+
+            <p class="weather-luck-rule-item">高清街景地图主要特点</p>
+            <p class="weather-luck-rule-item">● 精准定位：</p>
+            <p class="weather-luck-rule-item">快速定位当前位置，并立马展现附近的街景；</p>
+            <p class="weather-luck-rule-item">● 全国/全球风景：</p>
+            <p class="weather-luck-rule-item">覆盖全国大部分的5A、4A，覆盖全球近部分的热门旅游国家景点；</p>
+            <p class="weather-luck-rule-item">● 搜索全国景点：</p>
+            <p class="weather-luck-rule-item">可搜索你想看的国内景点名称，想要去游玩的城市查询城市景点；</p>
+
+			
+			<p class="weather-luck-rule-footer-name"></p>
+		</div>
+	
+	<script>
+		var UA = window.navigator.userAgent.toLowerCase();
+		var isIOS = /iphone|ipad|ipod/.test(UA);
+		var isAN = UA.indexOf('android') >= 0;
+		var setBtn = document.getElementById("set-operation");
+		setBtn.onclick = function(){
+			if(isAN){
+				window.xyWeather.callApp(JSON.stringify({action:"goSetting"}))
+				return
+			}
+			if(isIOS){
+				window.webkit.messageHandlers.callApp.postMessage(JSON.stringify({action:"goSetting"}))
+			}
+			
+		}
+	</script>
+<div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+      <div class="xl-chrome-ext-bar__logo"></div>
+
+      <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
+      <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+    </div></body></html>
