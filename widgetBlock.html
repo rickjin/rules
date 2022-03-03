@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 兼容模式方案：IE以最高级模式渲染文档；使用Chrome Frame渲染。 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+    <meta
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"
+      name="viewport"
+    />
+    <!-- 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (ios7.0版本以后，safari上已看不到效果) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式 (可选default、black、black-translucent) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 忽略将页面中的数字识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 作者 -->
+    <meta name="author" content="Cleam Lee" />
+    <!-- 关键词 -->
+    <meta name="keywords" content="关键词" />
+    <!-- 描述信息 -->
+    <meta name="description" content="描述信息" />
+    <title>简单小组件</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #ffffff;
+      }
+      header {
+        padding-top: 1.6rem;
+        padding-bottom: 0.7rem;
+      }
+      .logo {
+        width: 1.2rem;
+        height: 1.2rem;
+        background: url(https://h5.jiandantianqi.com/event/widget/imgs/logo.png)
+          no-repeat center;
+        background-size: 100% 100%;
+        margin: 0 auto;
+      }
+      .text-tips {
+        color: #333333;
+        text-align: center;
+        margin-top: 0.26rem;
+      }
+      .appname {
+        font-size: 0.48rem;
+        line-height: 0.56rem;
+        font-weight: 500;
+        margin-bottom: 0.14rem;
+      }
+      .describe {
+        font-size: 0.3rem;
+        line-height: 0.3rem;
+      }
+      header > div {
+        margin: 0 auto;
+      }
+      .content-btns > div {
+        width: 3.3rem;
+        height: 0.84rem;
+        margin: 0 auto;
+        margin-bottom: 0.4rem;
+      }
+      .btn-ios {
+        background: url(https://h5.jiandantianqi.com/event/wannianli/imgs/down_btn_ios.png)
+          no-repeat center;
+        background-size: 100% 100%;
+      }
+      .btn-and {
+        background: url(https://h5.jiandantianqi.com/event/wannianli/imgs/down_btn_and.png)
+          no-repeat center;
+        background-size: 100% 100%;
+      }
+      .content-block-img {
+        width: 6.5rem;
+        height: 10.58rem;
+        margin: 0 auto;
+      }
+      .content-block-img img {
+        width: 100%;
+        height: 100%;
+      }
+      footer p {
+        text-align: center;
+        margin-bottom: 0.2rem;
+        color: #999999;
+        font-size: 0.18rem;
+        line-height: 0.18rem;
+      }
+    </style>
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt =
+            'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth,
+              MAX_WIDTH = 750;
+            if (!clientWidth) {
+              return;
+            }
+            if (clientWidth >= MAX_WIDTH) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / MAX_WIDTH) + 'px';
+            }
+          };
+        recalc();
+        if (!doc.addEventListener) {
+          return;
+        }
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <div class="text-tips">
+        <div class="appname">简单小组件</div>
+        <div class="describe">组件丰富，自由选择；助您搭配超个性的桌面</div>
+      </div>
+    </header>
+    <section>
+      <div class="content-btns">
+        <div class="btn-ios" id="btnios"></div>
+      </div>
+      <div class="content-block-img">
+        <img
+          src="https://h5.jiandantianqi.com/event/widget/imgs/content_bg.png"
+          alt="简单小组件"
+        />
+      </div>
+    </section>
+    <script>
+      var btnios = document.getElementById('btnios');
+      btnios.onclick = function () {
+        window.location.href =
+          'https://apps.apple.com/cn/app/id1612649695';
+      };
+    </script>
+  </body>
+</html>
